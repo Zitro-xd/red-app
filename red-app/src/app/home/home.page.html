@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Estado de la red</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  @if (status(); as s) {
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          {{ s.connected ? '🟢 Conectado a Internet' : '🔴 Sin conexión' }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Tipo de conexión: <strong>{{ s.connectionType }}</strong>
+      </ion-card-content>
+    </ion-card>
+  }
+</ion-content>
