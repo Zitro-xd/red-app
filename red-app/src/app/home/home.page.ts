@@ -18,6 +18,13 @@ export class HomePage implements OnInit, OnDestroy {
   status = signal<ConnectionStatus | null>(null);
   private listener?: PluginListenerHandle;
 
+  tipos: Record<string, string> = {
+    wifi: 'Wi-Fi',
+    cellular: 'Celular',
+    none: 'Sin conexión',
+    unknown: 'Desconocido',
+  };
+
   async ngOnInit() {
     this.status.set(await Network.getStatus());
 
